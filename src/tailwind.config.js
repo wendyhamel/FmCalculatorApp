@@ -42,7 +42,7 @@ tailwind.config = {
 				},
 				'cyan': {
 					'300': 'hsl(177, 92%, 70%)', // key shadow t3
-					'400': 'hsl(176, 100%, 55%)', // key bg, toggle hover t3
+					'400': 'hsl(176, 100%, 50%)', // key bg, toggle hover t3
 					'500': 'hsl(176, 100%, 44%)', // key bg, toggle t3
 					'600': 'hsl(185, 42%, 47%)', // key bg hover t2
 					'700': 'hsl(185, 42%, 37%)', // key bg t2
@@ -65,7 +65,14 @@ tailwind.config = {
 
 			},
 			'fontSize': {
-				'2.5xl': '2rem'
+				'2.5xl': '2rem',
+				'4.5xl': '2.375rem'
+			},
+			boxShadow: {
+				'button': '0 4px 0 0 rgb(0, 0, 0, 1)'
+			},
+			scale: {
+				'99': '0.99'
 			}
 		}
 	},
