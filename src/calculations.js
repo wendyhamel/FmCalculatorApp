@@ -1,6 +1,6 @@
-window.calculate = function() {
+window.calculator = function() {
 	return {
-		sum: Alpine.$persist(null),
+		sum: Alpine.$persist(''),
 		selectedTheme: 2,
 		previousTheme: 1,
 		toggleTranslate: 'translate-x-6',
@@ -27,6 +27,22 @@ window.calculate = function() {
 					this.toggleTranslate = 'translate-x-6'
 					break;
 			}
+		console.log('sum = ' + this.sum)
+		},
+		addToSum(item) {
+			this.sum.concat(item)
+		},
+		removeLastFromSum() {
+			this.sum.slice(this.sum-1)
+		},
+		resetSum() {
+			this.sum = ''
+		},
+		calculate() {
+
+		},
+		total() {
+
 		}
 	}
 }

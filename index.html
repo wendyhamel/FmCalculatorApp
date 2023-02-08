@@ -26,7 +26,7 @@
 
 </head>
 <body>
-  <main x-data="calculate()" class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-700">
+  <main x-data="calculator()" class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-700">
      <section>
        <div class="flex justify-between items-center gap-4 mb-8">
          <h1 class="px-2 text-3xl">calc</h1>
@@ -51,24 +51,112 @@
        </div>
        <div class="px-6 pt-6 pb-7 rounded-lg flex justify-end bg-gray-100 mb-6 md:px-8 md:pt-8 md:pb-9 md:rounded-xl"><span class="text-4.5xl leading-none md:text-5.5xl">399,981</span></div>
        <div class="grid grid-cols-4 gap-y-4 gap-x-3 bg-gray-500 px-6 pt-6 pb-7 rounded-lg md:px-8 md:pt-8 md:pb-9 md:gap-y-7 md:gap-x-6 md:rounded-xl">
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">7</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">8</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">9</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-xl text-white uppercase md:leading-snug md:text-2.5xl">del</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">4</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">5</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">6</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">+</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">1</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">2</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">3</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">-</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">.</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">0</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">/</span></button>
-         <button class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"><span class="text-3.5xl leading-none md:text-4.5xl">x</span></button>
-         <button class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-4 md:pb-3 md:rounded-lg"><span class="text-xl text-white uppercase md:leading-none md:text-2.5xl">reset</span></button>
-         <button class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-orange-700 bg-orange-600 transform hover:bg-orange-500 focus:outline-none focus:bg-orange-500 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-3.5 md:pb-1 md:rounded-lg"><span class="text-xl text-white md:leading-normal md:text-2.5xl">=</span></button>
+         <button
+             @click="addToSum('7')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">7</span>
+         </button>
+         <button
+             @click="addToSum('8')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">8</span>
+         </button>
+         <button
+             @click="addToSum('9')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">9</span>
+         </button>
+         <button
+             @click="removeLastFromSum()"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-xl text-white uppercase md:leading-snug md:text-2.5xl">del</span>
+         </button>
+         <button
+             @click="addToSum('4')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">4</span>
+         </button>
+         <button
+             @click="addToSum('5')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">5</span>
+         </button>
+         <button
+             @click="addToSum('6')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">6</span>
+         </button>
+         <button
+             @click="addToSum('+')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">+</span>
+         </button>
+         <button
+             @click="addToSum('1')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">1</span>
+         </button>
+         <button
+             @click="addToSum('2')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">2</span>
+         </button>
+         <button
+             @click="addToSum('3')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">3</span>
+         </button>
+         <button
+             @click="addToSum('-')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">-</span>
+         </button>
+         <button
+             @click="addToSum('.')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">.</span>
+         </button>
+         <button
+             @click="addToSum('0')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">0</span>
+         </button>
+         <button
+             @click="addToSum('/')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">/</span>
+         </button>
+         <button
+             @click="addToSum('*')"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+         >
+           <span class="text-3.5xl leading-none md:text-4.5xl">x</span>
+         </button>
+         <button
+             @click="resetSum()"
+             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-4 md:pb-3 md:rounded-lg">
+           <span class="text-xl text-white uppercase md:leading-none md:text-2.5xl">reset</span>
+         </button>
+         <button
+             @click="calculate()"
+             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-orange-700 bg-orange-600 transform hover:bg-orange-500 focus:outline-none focus:bg-orange-500 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-3.5 md:pb-1 md:rounded-lg">
+           <span class="text-xl text-white md:leading-normal md:text-2.5xl">=</span>
+         </button>
        </div>
      </section>
   </main>
