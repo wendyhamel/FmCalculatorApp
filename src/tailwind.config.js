@@ -44,11 +44,10 @@ tailwind.config = {
 					'300': 'hsl(177, 92%, 70%)', // key shadow t3
 					'400': 'hsl(176, 100%, 50%)', // key bg, toggle hover t3
 					'500': 'hsl(176, 100%, 44%)', // key bg, toggle t3
-					'600': 'hsl(185, 42%, 47%)', // key bg hover t2
+					'600': 'hsl(185, 42%, 52%)', // key bg hover t2
 					'700': 'hsl(185, 42%, 37%)', // key bg t2
 					'800': 'hsl(185, 58%, 25%)', // key shadow t2
 				},
-
 				'violet': {
 					'800': 'hsl(268, 71%, 12%)', // toggle, keypad bg and screen bg t3
 					'900': 'hsl(268, 75%, 9%)', // main bg t3
