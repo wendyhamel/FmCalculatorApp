@@ -65,8 +65,10 @@ tailwind.config = {
 
 			},
 			'fontSize': {
-				'2.5xl': '2rem',
-				'4.5xl': '2.375rem'
+				'2.5xl': '1.75rem',
+				'3.5xl': '2rem',
+				'4.5xl': '2.375rem',
+				'5.5xl': '3.375rem'
 			},
 			boxShadow: {
 				'button': '0 4px 0 0 rgb(0, 0, 0, 1)'
