@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    :class="darkMode && 'dark'"
+>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -24,9 +27,11 @@
   <!-- Alpine.js core  -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+  <!-- Script for checking system preference for theme  -->
+  <script src="src/theme.js"></script>
 </head>
 <body>
-  <main x-data="calculator()" class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-700">
+  <main x-data="calculator()" class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-800 dark:bg-blue-500 dark:text-blue-400">
      <section>
        <div class="flex justify-between items-center gap-4 mb-8">
          <h1 class="px-2 text-3xl">calc</h1>
