@@ -14,7 +14,7 @@ tailwind.config = {
 					'500': 'hsl(222, 26%, 31%)', // main bg  T1: dark
 					'600': 'hsl(223, 31%, 20%)', // toggle and keypad bg  T1: dark
 					'700': 'hsl(224, 36%, 15%)', // screen bg  T1: dark
-					'800': 'hsl(198, 20%, 13%)' // text  T3: contrast
+					'800': 'hsl(198, 20%, 13%)' // text  T3: neon
 
 				},
 				'red': {
@@ -30,7 +30,7 @@ tailwind.config = {
 					'600': 'hsl(25, 98%, 40%)', // key bg, toggle  T2: light
 					'700': 'hsl(25, 99%, 27%)', // key shadow  T2: light
 				},
-				'white': 'hsl(0, 0%, 100%)', // text  T1: dark,  T2: light,  T3: contrast
+				'white': 'hsl(0, 0%, 100%)', // text  T1: dark,  T2: light,  T3: neon
 
 				'gray': {
 					'100': 'hsl(0, 0%, 93%)', // screen bg  T2: light
@@ -43,26 +43,26 @@ tailwind.config = {
 
 				},
 				'cyan': {
-					'300': 'hsl(177, 92%, 70%)', // key shadow  T3: contrast
-					'400': 'hsl(176, 100%, 50%)', // key bg, toggle hover  T3: contrast
-					'500': 'hsl(176, 100%, 44%)', // key bg, toggle  T3: contrast
+					'300': 'hsl(177, 92%, 70%)', // key shadow  T3: neon
+					'400': 'hsl(176, 98%, 50%)', // key bg, toggle hover  T3: neon
+					'500': 'hsl(176, 100%, 44%)', // key bg, toggle  T3: neon
 					'600': 'hsl(185, 42%, 52%)', // key bg hover  T2: light
 					'700': 'hsl(185, 42%, 37%)', // key bg  T2: light
 					'800': 'hsl(185, 58%, 25%)', // key shadow  T2: light
 				},
 				'violet': {
-					'800': 'hsl(268, 71%, 12%)', // toggle, keypad bg and screen bg  T3: contrast
-					'900': 'hsl(268, 75%, 9%)', // main bg  T3: contrast
+					'800': 'hsl(268, 71%, 12%)', // toggle, keypad bg and screen bg  T3: neon
+					'900': 'hsl(268, 75%, 9%)', // main bg  T3: neon
 				},
 				'magenta': {
-					'400': 'hsl(285, 91%, 52%)', // key shadow  T3: contrast
-					'500': 'hsl(290, 70%, 36%)', // key shadow  T3: contrast
-					'600': 'hsl(281, 89%, 36%)', // key bg hover  T3: contrast
-					'700': 'hsl(281, 89%, 26%)', // key bg  T3: contrast
-					'800': 'hsl(268, 47%, 31%)', // key bg hover  T3: contrast
-					'900': 'hsl(268, 47%, 21%)', // key bg  T3: contrast
+					'400': 'hsl(285, 91%, 52%)', // key shadow  T3: neon
+					'500': 'hsl(290, 70%, 36%)', // key shadow  T3: neon
+					'600': 'hsl(281, 84%, 36%)', // key bg hover  T3: neon
+					'700': 'hsl(281, 89%, 26%)', // key bg  T3: neon
+					'800': 'hsl(268, 47%, 31%)', // key bg hover  T3: neon
+					'900': 'hsl(268, 47%, 21%)', // key bg  T3: neon
 				},
-				'yellow': 'hsl(52, 100%, 62%)', // text  T3: contrast
+				'yellow': 'hsl(52, 100%, 62%)', // text  T3: neon
 
 			},
 			'fontSize': {

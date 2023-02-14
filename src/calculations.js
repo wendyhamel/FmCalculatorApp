@@ -2,24 +2,19 @@ window.calculator = function() {
 	return {
 		darkMode: Alpine.$persist(true),
 		sum: Alpine.$persist(''),
-		selectedTheme: 'dark',
-		previousTheme: 'light',
-		toggleTranslate: 'translate-x-0',
+		selectedTheme: Alpine.$persist('dark'),
 		switchTheme() {
 			switch(this.selectedTheme) {
 				case 'dark':
 					this.darkMode = true
 					localStorage.theme = 'dark'
-					this.toggleTranslate = 'translate-x-0'
 					break;
 				case 'light':
 						this.darkMode = false
 						localStorage.theme = 'light'
-						this.toggleTranslate = 'translate-x-6'
 					break;
-				case 'contrast':
+				case 'neon':
 					this.darkMode = false
-					this.toggleTranslate = 'translate-x-12'
 					break;
 				default:
 					localStorage.removeItem('theme')
