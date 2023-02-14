@@ -8,36 +8,22 @@ window.calculator = function() {
 		switchTheme() {
 			switch(this.selectedTheme) {
 				case 'dark':
-					this.darkMode = false
+					this.darkMode = true
 					localStorage.theme = 'dark'
-
-					this.toggleTranslate = 'translate-x-6'
-					this.selectedTheme = 'light'
-					this.previousTheme = 'dark'
+					this.toggleTranslate = 'translate-x-0'
 					break;
 				case 'light':
-					if (this.previousTheme === 'dark') {
 						this.darkMode = false
 						localStorage.theme = 'light'
-						this.toggleTranslate = 'translate-x-12'
-						this.selectedTheme = 'contrast'
-					} else if (this.previousTheme === 'contrast') {
-						this.darkMode = true
-						this.toggleTranslate = 'translate-x-0'
-						this.selectedTheme = 'dark'
-					}
-					this.previousTheme = 'light'
+						this.toggleTranslate = 'translate-x-6'
 					break;
 				case 'contrast':
 					this.darkMode = false
-					this.previousTheme = 'contrast'
-					this.selectedTheme = 'light'
-					this.toggleTranslate = 'translate-x-6'
+					this.toggleTranslate = 'translate-x-12'
 					break;
 				default:
 					localStorage.removeItem('theme')
-					this.selectedTheme = 'light'
-					this.previousTheme = 'dark'
+					this.selectedTheme = localStorage.theme
 					break;
 			}
 		console.log('sum = ' + this.sum)
