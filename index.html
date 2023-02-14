@@ -66,9 +66,9 @@
                    ></span>
                  </div>
                  <div class="absolute grid grid-cols-3 inset-0 pb-1">
-                   <button @click="selectedTheme = 'dark'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'"></button>
-                   <button @click="selectedTheme = 'light'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'"></button>
-                   <button @click="selectedTheme = 'neon'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'"></button>
+                   <button @click="selectedTheme = 'dark'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'" title="1:dark"></button>
+                   <button @click="selectedTheme = 'light'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'" title="2:light"></button>
+                   <button @click="selectedTheme = 'neon'; switchTheme()" type="button" class="rounded-full focus:outline-none focus-visible:ring-2" :class="selectedTheme === 'neon' ? 'focus-visible:ring-cyan-400' : 'focus-visible:ring-orange-500 dark:focus-visible:ring-red-400'" title="3:neon"></button>
                  </div>
                </div>
              </div>
