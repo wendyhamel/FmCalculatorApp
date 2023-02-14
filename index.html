@@ -76,29 +76,36 @@
          </div>
        </div>
        <div
-           class="px-6 pt-6 pb-7 rounded-lg flex justify-end mb-6 md:px-8 md:pt-8 md:pb-9 md:rounded-xl"
+           class="px-6 pt-6 pb-7 rounded-lg flex justify-end mb-6 md:px-8 md:pt-8 md:pb-9 md:rounded-xl overflow-hidden"
            :class="selectedTheme === 'neon' ? 'bg-violet-800' : 'bg-gray-100 dark:bg-blue-700 dark:text-white'"
-       ><span class="text-4.5xl leading-none md:text-5.5xl">399,981</span></div>
+       >
+         <input
+                 type="text"
+                 class="text-4.5xl bg-transparent text-end leading-none md:text-5.5xl min-h-9.5 md:min-h-13 truncate"
+                 :value="display"
+                 disabled
+         >
+       </div>
        <div
            class="grid grid-cols-4 gap-y-4 gap-x-3 px-6 pt-6 pb-7 rounded-lg md:px-8 md:pt-8 md:pb-9 md:gap-y-7 md:gap-x-6 md:rounded-xl"
            :class="selectedTheme === 'neon' ? 'bg-violet-800' : 'bg-gray-500 dark:bg-blue-600'"
        >
          <button
-             @click="addToSum('7')"
+             @click="addToFormula('7')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">7</span>
          </button>
          <button
-             @click="addToSum('8')"
+             @click="addToFormula('8')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">8</span>
          </button>
          <button
-             @click="addToSum('9')"
+             @click="addToFormula('9')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
@@ -112,84 +119,84 @@
            <span class="text-xl text-white uppercase md:leading-snug md:text-2.5xl">del</span>
          </button>
          <button
-             @click="addToSum('4')"
+             @click="addToFormula('4')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">4</span>
          </button>
          <button
-             @click="addToSum('5')"
+             @click="addToFormula('5')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">5</span>
          </button>
          <button
-             @click="addToSum('6')"
+             @click="addToFormula('6')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">6</span>
          </button>
          <button
-             @click="addToSum('+')"
+             @click="addToFormula('+')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">+</span>
          </button>
          <button
-             @click="addToSum('1')"
+             @click="addToFormula('1')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">1</span>
          </button>
          <button
-             @click="addToSum('2')"
+             @click="addToFormula('2')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">2</span>
          </button>
          <button
-             @click="addToSum('3')"
+             @click="addToFormula('3')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">3</span>
          </button>
          <button
-             @click="addToSum('-')"
+             @click="addToFormula('-')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">-</span>
          </button>
          <button
-             @click="addToSum('.')"
+             @click="addToFormula('.')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">.</span>
          </button>
          <button
-             @click="addToSum('0')"
+             @click="addToFormula('0')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">0</span>
          </button>
          <button
-             @click="addToSum('/')"
+             @click="addToFormula('/')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">/</span>
          </button>
          <button
-             @click="addToSum('*')"
+             @click="addToFormula('*')"
              class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button transform focus:outline-none active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
              :class="selectedTheme === 'neon' ? 'shadow-magenta-500 bg-magenta-900 hover:bg-magenta-800 focus-visible:bg-magenta-800' : 'shadow-gray-600 bg-gray-400 hover:bg-gray-200 focus-visible:bg-gray-200 dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200 focus-visible:dark:bg-orange-200'"
          >

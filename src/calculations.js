@@ -1,7 +1,9 @@
 window.calculator = function() {
 	return {
 		darkMode: Alpine.$persist(true),
-		sum: Alpine.$persist(''),
+		display: Alpine.$persist('399,981'),
+		formula: '',
+		calculation: [],
 		selectedTheme: Alpine.$persist('dark'),
 		switchTheme() {
 			switch(this.selectedTheme) {
@@ -21,22 +23,25 @@ window.calculator = function() {
 					this.selectedTheme = localStorage.theme
 					break;
 			}
-		console.log('sum = ' + this.sum)
 		},
-		addToSum(item) {
-			this.sum.concat(item)
+		addToFormula(item) {
+			this.calculation.push(item);
+			this.formula = this.calculation.join('')
+			return this.display = this.formula.replaceAll('.', ',').replaceAll('+', '\u002B').replaceAll('-', '\u002D').replaceAll('/', '\u00F7').replaceAll('*', '\u00D7')
 		},
 		removeLastFromSum() {
-			this.sum.slice(this.sum-1)
+			this.calculation.pop()
+			this.formula = this.calculation.join('')
+			this.display = this.formula
 		},
 		resetSum() {
-			this.sum = ''
+			this.calculation = []
+			this.formula = this.calculation
+			this.display = this.formula
 		},
 		calculate() {
-
+			this.formula = eval(this.formula)
+			this.display = this.formula.toString().replaceAll('.', ',')
 		},
-		total() {
-
-		}
 	}
 }

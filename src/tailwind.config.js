@@ -71,6 +71,10 @@ tailwind.config = {
 				'4.5xl': '2.375rem',
 				'5.5xl': '3.375rem'
 			},
+			minHeight: {
+				'9.5': '2.375rem',
+				'13': '3.375rem'
+			},
 			boxShadow: {
 				'button': '0 4px 0 0 rgb(0, 0, 0, 1)'
 			},
