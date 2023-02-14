@@ -2,34 +2,42 @@ window.calculator = function() {
 	return {
 		darkMode: Alpine.$persist(true),
 		sum: Alpine.$persist(''),
-		selectedTheme: 1,
-		previousTheme: 2,
+		selectedTheme: 'dark',
+		previousTheme: 'light',
 		toggleTranslate: 'translate-x-0',
 		switchTheme() {
 			switch(this.selectedTheme) {
-				case 1:
+				case 'dark':
 					this.darkMode = false
+					localStorage.theme = 'dark'
+
 					this.toggleTranslate = 'translate-x-6'
-					this.selectedTheme = 2
-					this.previousTheme = 1
+					this.selectedTheme = 'light'
+					this.previousTheme = 'dark'
 					break;
-				case 2:
-					if (this.previousTheme === 1) {
+				case 'light':
+					if (this.previousTheme === 'dark') {
 						this.darkMode = false
+						localStorage.theme = 'light'
 						this.toggleTranslate = 'translate-x-12'
-						this.selectedTheme = 3
-					} else if (this.previousTheme === 3) {
+						this.selectedTheme = 'contrast'
+					} else if (this.previousTheme === 'contrast') {
 						this.darkMode = true
 						this.toggleTranslate = 'translate-x-0'
-						this.selectedTheme = 1
+						this.selectedTheme = 'dark'
 					}
-					this.previousTheme = 2
+					this.previousTheme = 'light'
 					break;
-				case 3:
+				case 'contrast':
 					this.darkMode = false
-					this.previousTheme = 3
-					this.selectedTheme = 2
+					this.previousTheme = 'contrast'
+					this.selectedTheme = 'light'
 					this.toggleTranslate = 'translate-x-6'
+					break;
+				default:
+					localStorage.removeItem('theme')
+					this.selectedTheme = 'light'
+					this.previousTheme = 'dark'
 					break;
 			}
 		console.log('sum = ' + this.sum)

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html
     lang="en"
+    x-data="calculator()"
     :class="darkMode && 'dark'"
 >
 <head>
@@ -31,9 +32,9 @@
   <script src="src/theme.js"></script>
 </head>
 <body>
-  <main x-data="calculator()" class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-800 dark:bg-blue-500 dark:text-blue-400">
+  <main class="antialiased min-h-screen grid place-items-center p-6 bg-gray-300 text-gray-800 dark:bg-blue-500 dark:text-blue-400 transition">
      <section>
-       <div class="flex justify-between items-center gap-4 mb-8">
+       <div class="flex justify-between items-center gap-4 mb-8 dark:text-white">
          <h1 class="px-2 text-3xl">calc</h1>
          <div class="flex items-center gap-4 ">
            <div class="">
@@ -46,127 +47,127 @@
              </div>
              <div class="flex items-center justify-center gap-6">
                <span class="text-xs uppercase tracking-wider">theme</span>
-               <button @click="switchTheme()" type="button" class="bg-gray-500 relative inline-flex items-center h-7 w-[4.5rem] flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent group transition-colors duration-200 ease-in-out focus:outline-none" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
+               <button @click="switchTheme()" type="button" class="bg-gray-500 relative inline-flex items-center h-7 w-[4.5rem] flex-shrink-0 cursor-pointer rounded-full border-4 border-transparent group transition-colors duration-200 ease-in-out focus:outline-none dark:bg-blue-600" role="switch" aria-checked="false" aria-labelledby="annual-billing-label">
                  <span class="sr-only" x-text="'theme = ' + selectedTheme"></span>
-                 <span aria-hidden="true" class="pointer-events-none inline-block h-4 w-4 transform rounded-full bg-orange-600 shadow ring-0 transition duration-200 ease-in-out group-hover:bg-orange-500 group-focus:bg-orange-500" :class="toggleTranslate"></span>
+                 <span aria-hidden="true" class="pointer-events-none inline-block h-4 w-4 transform rounded-full bg-orange-600 shadow ring-0 transition duration-200 ease-in-out group-hover:bg-orange-500 group-focus:bg-orange-500  dark:bg-red-500 dark:group-hover:bg-red-400 dark:group-focus:bg-red-400" :class="toggleTranslate"></span>
                </button>
              </div>
            </div>
          </div>
        </div>
-       <div class="px-6 pt-6 pb-7 rounded-lg flex justify-end bg-gray-100 mb-6 md:px-8 md:pt-8 md:pb-9 md:rounded-xl"><span class="text-4.5xl leading-none md:text-5.5xl">399,981</span></div>
-       <div class="grid grid-cols-4 gap-y-4 gap-x-3 bg-gray-500 px-6 pt-6 pb-7 rounded-lg md:px-8 md:pt-8 md:pb-9 md:gap-y-7 md:gap-x-6 md:rounded-xl">
+       <div class="px-6 pt-6 pb-7 rounded-lg flex justify-end bg-gray-100 mb-6 md:px-8 md:pt-8 md:pb-9 md:rounded-xl dark:bg-blue-700 dark:text-white"><span class="text-4.5xl leading-none md:text-5.5xl">399,981</span></div>
+       <div class="grid grid-cols-4 gap-y-4 gap-x-3 bg-gray-500 px-6 pt-6 pb-7 rounded-lg md:px-8 md:pt-8 md:pb-9 md:gap-y-7 md:gap-x-6 md:rounded-xl dark:bg-blue-600">
          <button
              @click="addToSum('7')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">7</span>
          </button>
          <button
              @click="addToSum('8')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">8</span>
          </button>
          <button
              @click="addToSum('9')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">9</span>
          </button>
          <button
              @click="removeLastFromSum()"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300  dark:bg-blue-200 dark:shadow-blue-300 hover:dark:bg-blue-100"
          >
            <span class="text-xl text-white uppercase md:leading-snug md:text-2.5xl">del</span>
          </button>
          <button
              @click="addToSum('4')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">4</span>
          </button>
          <button
              @click="addToSum('5')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">5</span>
          </button>
          <button
              @click="addToSum('6')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">6</span>
          </button>
          <button
              @click="addToSum('+')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">+</span>
          </button>
          <button
              @click="addToSum('1')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">1</span>
          </button>
          <button
              @click="addToSum('2')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">2</span>
          </button>
          <button
              @click="addToSum('3')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">3</span>
          </button>
          <button
              @click="addToSum('-')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">-</span>
          </button>
          <button
              @click="addToSum('.')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">.</span>
          </button>
          <button
              @click="addToSum('0')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">0</span>
          </button>
          <button
              @click="addToSum('/')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">/</span>
          </button>
          <button
              @click="addToSum('*')"
-             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg"
+             class="px-4 pt-4 pb-3 flex justify-center items-baseline rounded-md shadow-button shadow-gray-600 bg-gray-400 transform hover:bg-gray-200 focus:outline-none focus:bg-gray-200 active:shadow-none active:translate-y-1 active:scale-99 md:px-7 md:pt-3.5 md:pb-2 md:rounded-lg dark:bg-orange-300 dark:shadow-orange-400 hover:dark:bg-orange-200"
          >
            <span class="text-3.5xl leading-none md:text-4.5xl">x</span>
          </button>
          <button
              @click="resetSum()"
-             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-4 md:pb-3 md:rounded-lg">
+             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-cyan-800 bg-cyan-700 transform hover:bg-cyan-600 focus:outline-none focus:bg-cyan-600 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-4 md:pb-3 md:rounded-lg dark:bg-blue-200 dark:shadow-blue-300 hover:dark:bg-blue-100">
            <span class="text-xl text-white uppercase md:leading-none md:text-2.5xl">reset</span>
          </button>
          <button
              @click="calculate()"
-             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-orange-700 bg-orange-600 transform hover:bg-orange-500 focus:outline-none focus:bg-orange-500 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-3.5 md:pb-1 md:rounded-lg">
+             class="p-4 flex justify-center items-baseline rounded-md shadow-button shadow-orange-700 bg-orange-600 transform hover:bg-orange-500 focus:outline-none focus:bg-orange-500 active:shadow-none active:translate-y-1 active:scale-99 col-span-2 md:pt-3.5 md:pb-1 md:rounded-lg dark:bg-red-500 dark:shadow-red-600 hover:dark:bg-red-400">
            <span class="text-xl text-white md:leading-normal md:text-2.5xl">=</span>
          </button>
        </div>
      </section>
   </main>
 
-  <footer class="fixed bottom-0 inset-x-0 text-center text-xs text-cyan-dark bg-white/80 pb-1 opacity-0 translate-y-2 hover:opacity-100 hover:translate-y-0 transform transition ease-in-out duration-150">
+  <footer class="fixed bottom-0 inset-x-0 text-center text-xs text-cyan-dark bg-white/80 py-1 opacity-0 translate-y-2 hover:opacity-100 hover:translate-y-0 transform transition ease-in-out duration-150">
     Challenge by <a class="hover:underline" href="https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29" target="_blank">Frontend Mentor</a>.
     Coded by <a class="hover:underline" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
   </footer>
