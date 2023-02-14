@@ -41,7 +41,7 @@ window.calculator = function() {
 		},
 		calculate() {
 			this.formula = eval(this.formula)
-			this.display = this.formula.toString().replaceAll('.', ',')
+			this.display = this.formula.toString().replaceAll('.', ',').replaceAll('+', '\u002B').replaceAll('-', '\u002D').replaceAll('/', '\u00F7').replaceAll('*', '\u00D7')
 		},
 	}
 }
